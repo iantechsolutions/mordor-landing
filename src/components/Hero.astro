@@ -9,37 +9,41 @@ interface Props {
 	title?: string;
 	tags?: string[];
 	children?: HTMLElement | HTMLElement[];
-	image?:string
+	image?: string;
 }
 
-const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'],image  } = Astro.props;
+const {
+	url = '#',
+	alt = 'Project image',
+	title = 'Project title',
+	tags = ['Tags'],
+	image,
+} = Astro.props;
 ---
 
 <section
 	data-testid="hero"
 	class="flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
 >
-
-	
-				
-	<div class="mb-20 flex flex-col items-center  w-1/2">
-		<div data-testid="hero-img" class="flex w-1/2 items-center justify-center" >
+	<div class="mb-20 flex flex-col items-center lg:w-1/2">
+		<div data-testid="hero-img" class="flex w-1/2 items-center justify-center">
 			<Image
 				src={mordor}
 				alt=""
-				aspectRatio="1080:891"
+				aspectRatio="4:4"
 				format="png"
-				width={300}
-				height={300}
+				width={400}
+				height={400}
 				loading="eager"
 			/>
 		</div>
 		<div>
-			<h1 class="mb-10 font-monospace text-3xl text-black dark:text-white lg:text-5xl">
-				Vení a <span class="text-orange">forjar</span> tu cuerpo en el reino donde la voluntad se  <span class="text-orange">fortalece</span> y la mente se  <span class="text-orange">potencia</span>.				
+			<h1 class="mb-10 font-monospace text-2xl text-black dark:text-white lg:text-5xl">
+				Vení a <span class="text-orange">forjar</span> tu cuerpo en el reino donde la voluntad se <span
+					class="text-orange">fortalece</span
+				> y la mente se <span class="text-orange">potencia</span>.
 			</h1>
 		</div>
-		
 	</div>
 	<!-- <div data-testid="hero-img" class="mb-10 flex w-1/2 items-center justify-center">
 		<Image
