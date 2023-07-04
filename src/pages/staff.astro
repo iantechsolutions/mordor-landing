@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/ui/Card.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects', ({ data }) => {
+	return !data.inProgress;
+});
+---
+
+<Layout>
+	<main>
+        <div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+            {
+                projects.map((project) => (
+                    <Card
+                        url={project.data.link}
+                        title={project.data.title}
+                        alt={project.data.img_alt}
+                        tags={project.data.tags}
+                    />
+                ))
+            }
+        </div>
+	</main>
+</Layout>
