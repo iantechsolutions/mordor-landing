@@ -16,15 +16,17 @@ const projects = await getCollection('projects', ({ data }) => {
 	<span class="mb-10 h-1 w-10 bg-orange"></span>
 	<div class="mb-5 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
-			projects.slice(0,3).map((project) => (
-				<Card
-					url={project.data.link}
-					title={project.data.title}
-					alt={project.data.img_alt}
-					tags={project.data.tags}
-					
-				/>
-			))
+			projects
+				.slice(0, 3)
+				.map((project) => (
+					<Card
+						url={project.data.link}
+						title={project.data.title}
+						alt={project.data.img_alt}
+						tags={project.data.tags}
+						image={project.data.image || 'default.png'}
+					/>
+				))
 		}
 	</div>
 	<a
