@@ -28,7 +28,7 @@ const {
 		<a href={url} target="_blank" aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
 				<Image
-					src={`/${image}`}
+					src={`/${image ?? 'default.png'}`}
 					alt={alt}
 					aspectRatio="4:4"
 					format="png"
